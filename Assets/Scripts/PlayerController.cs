@@ -44,10 +44,10 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         //using TMPro because it's much nicer looking
-        countText.SetText("Count: " + count.ToString());
+        countText.SetText("Score: " + count.ToString());
 
         //Win Condition Text
-        if (count >= 7)
+        if (count >= 16)
         {
             winText.SetText("You Won!");
         }
