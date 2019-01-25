@@ -9,6 +9,12 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Rigidbody rb;
 
+    //size of ball is tracked
+    float size = 1;
+
+    //the increment the size goes up as objects are collected
+    float size_up = 0.01f;
+
     private int count;
     public TextMeshProUGUI countText;
     public TextMeshProUGUI winText;
@@ -30,12 +36,18 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(movement*speed);
     }
 
-    // Destroy everything that enters the trigger
+    // Grab everything that enters the trigger
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Pick Up"))
         {
-            other.gameObject.SetActive(false);
+            //Increases size of ball
+            transform.localScale += new Vector3(size_up, size_up, size_up);
+            size += size_up;
+            other.enabled= false;
+
+            //pick up object becomes child of ball
+            other.transform.SetParent(this.transform);
             count += 1;
             SetCountText();
         }
