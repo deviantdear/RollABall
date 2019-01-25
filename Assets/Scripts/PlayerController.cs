@@ -6,18 +6,20 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    #region Variables
     public float speed;
     private Rigidbody rb;
-
     //size of ball is tracked
     float size = 1;
-
     //the increment the size goes up as objects are collected
     float size_up = 0.01f;
 
+    //UI
     private int count;
     public TextMeshProUGUI countText;
     public TextMeshProUGUI winText;
+
+    #endregion
 
     void Start()
     {
@@ -32,7 +34,6 @@ public class PlayerController : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-
         rb.AddForce(movement*speed);
     }
 
