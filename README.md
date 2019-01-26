@@ -1,5 +1,5 @@
 # RollABall
-To operate this repository you will need Unity vesion 2018.3.2f1
+To operate this repository you will need Unity vesion 2018.3.3f1
 
 There is a Vanilla feature branch version which is just the completed Unity tutorial
 Game Jam 1 will be a Katamari Damacy inspired edit of Roll-a-ball.
