@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Spike"))
         {
+            other.gameObject.SetActive(false);
             //Decreases size of ball
             transform.localScale += new Vector3(size_down, size_down, size_down);
             size -= size_down;
