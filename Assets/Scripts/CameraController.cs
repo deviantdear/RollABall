@@ -17,7 +17,9 @@ public class CameraController : MonoBehaviour
 
     // Late Update is called once per frame after all other items in the frame have loaded
     void LateUpdate()
-    {
-        transform.position = player.transform.position + offset;
+    { 
+
+    transform.position = (player.transform.position + offset * 0.2f *player.transform.localScale.magnitude);
+
     }
 }
