@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pick Up
   - Spike
+  - Redirector
   layers:
   - Default
   - TransparentFX
