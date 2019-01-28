@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     //size of ball is tracked
     float size = 1;
     //the increment the size goes up as objects are collected
-    float size_up = 0.01f;
-    float size_down = -0.01f;
+    float size_up = 0.1f;
+    float size_down = -0.1f;
 
     //UI
     private int count;
@@ -45,7 +45,8 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Pick Up"))
         {
             //Increases size of ball
-            transform.localScale += new Vector3(size_up, size_up, size_up);
+            //transform.localScale += new Vector3(size_up, size_up, size_up)*2f;
+            transform.localScale = transform.localScale * (1f + size_up);
             size += size_up;
             other.enabled = false;
 
