@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     float size = 1;
     //the increment the size goes up as objects are collected
     float size_up = 0.01f;
-    float size_down = -0.01f;
+    float size_down = 0.01f;
 
     //UI
     private int count;
@@ -53,14 +53,17 @@ public class PlayerController : MonoBehaviour
             count += 1;
             SetCountText();
         }
-        if (other.gameObject.CompareTag("Spike"))
+        else if (other.gameObject.CompareTag("Spike"))
         {
             //Decreases size of ball
             transform.localScale += new Vector3(size_down, size_down, size_down);
             size -= size_down;
             //Testing for Reaction by seeing if score decreases
-            count -= 1;
-            SetCountText();
+            if (count != 0)
+            {
+                count -= 1;
+                SetCountText();
+            }
         }         
     }
 
