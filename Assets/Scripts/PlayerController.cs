@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private int count;
     public TextMeshProUGUI countText;
     public TextMeshProUGUI winText;
+    private bool setMovement;
 
     #endregion
 
@@ -62,9 +63,14 @@ public class PlayerController : MonoBehaviour
             //Testing for Reaction by seeing if score decreases
             count -= 1;
             SetCountText();
-        }         
+        }
+        if (other.gameObject.tag == "redirector")
+        {
+            //delete this count after testing
+            count -= 1;
+            SetCountText();
+        }
     }
-
     void SetCountText()
     {
         //using TMPro because it's much nicer looking
