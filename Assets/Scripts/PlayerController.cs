@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
             transform.localScale = transform.localScale * (1f + size_up);
             size += size_up;
             other.enabled = false;
+            //Debug.Log(transform.localScale.ToString());
 
             //pick up object becomes child of ball
             other.transform.SetParent(this.transform);
@@ -58,7 +59,8 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             //Decreases size of ball
-            transform.localScale += new Vector3(size_down, size_down, size_down);
+            //transform.localScale += new Vector3(size_down, size_down, size_down);
+            transform.localScale = transform.localScale * (1f+size_down);
             size -= size_down;
             //Testing for Reaction by seeing if score decreases
             count -= 1;
