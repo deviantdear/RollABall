@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     #region Variables
+    private float cooldownTime = 2;
+    private float nextJumpTime = 0;
     public float speed;
     public float jumpPower;
     private Rigidbody rb;
@@ -38,10 +40,14 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         rb.AddForce(movement*speed);
-
-        if(Input.GetKeyDown("space"))
+        if(Time.time > nextJumpTime)
         {
-            rb.AddForce(new Vector3(0f, jumpPower, 0f), ForceMode.Impulse);
+            if (Input.GetKeyDown("space"))
+            {
+                rb.AddForce(new Vector3(0f, jumpPower, 0f), ForceMode.Impulse);
+                nextJumpTime = Time.time + cooldownTime;
+                cooldownTime = 1.0f;
+            }
         }
     }
 
@@ -90,5 +96,4 @@ public class PlayerController : MonoBehaviour
             winText.SetText("You Won!");
         }
     }
-
 }
