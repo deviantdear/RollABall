@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     //size of ball is tracked
     float size = 1;
     //the increment the size goes up as objects are collected
-    float size_up = 0.1f;
+    float size_up = 0.01f;
     float size_down = -0.1f;
 
     //UI
