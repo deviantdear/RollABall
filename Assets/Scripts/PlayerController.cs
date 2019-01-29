@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI countText;
     public TextMeshProUGUI winText;
 
+    //sounds 
+   // public AudioClip fruitSound;
+   //public AudioClip spikeSound;
+
     #endregion
 
     void Start()
@@ -43,8 +47,10 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Pick Up"))
         {
+            //Sound Effect
+           // this.GetComponent<AudioSource>().PlayOneShot(fruitSound);
+
             //Increases size of ball
-            //transform.localScale += new Vector3(size_up, size_up, size_up)*2f;
             transform.localScale = transform.localScale * (1f + size_up);
             size += size_up;
             other.enabled = false;
@@ -55,16 +61,16 @@ public class PlayerController : MonoBehaviour
             count += 1;
             SetCountText();
         }
-        if (other.gameObject.CompareTag("Spike"))
+        else if (other.gameObject.CompareTag("Spike") && size != 0)
         {
+            //Sound Effect
+           // this.GetComponent<AudioSource>().PlayOneShot(spikeSound);
+
             other.gameObject.SetActive(false);
-            //Decreases size of ball
-            //transform.localScale += new Vector3(size_down, size_down, size_down);
+            //Decreases size of ball 
             transform.localScale = transform.localScale * (1f+size_down);
             size -= size_down;
-            //Testing for Reaction by seeing if score decreases
-            count -= 1;
-            SetCountText();
+            Debug.Log("going down a size");
         }         
     }
 
