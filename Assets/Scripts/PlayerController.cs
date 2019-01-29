@@ -47,7 +47,9 @@ public class PlayerController : MonoBehaviour
             //transform.localScale += new Vector3(size_up, size_up, size_up)*2f;
             transform.localScale = transform.localScale * (1f + size_up);
             size += size_up;
+            other.gameObject.GetComponent<Rotator>().enabled = false;
             other.enabled = false;
+
             //Debug.Log(transform.localScale.ToString());
 
             //pick up object becomes child of ball
@@ -65,6 +67,7 @@ public class PlayerController : MonoBehaviour
             //Testing for Reaction by seeing if score decreases
             count -= 1;
             SetCountText();
+
         }         
     }
 
