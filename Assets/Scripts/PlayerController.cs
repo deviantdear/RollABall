@@ -12,13 +12,17 @@ public class PlayerController : MonoBehaviour
     //size of ball is tracked
     float size = 1;
     //the increment the size goes up as objects are collected
-    float size_up = 0.01f;
-    float size_down = 0.01f;
+    float size_up = 0.1f;
+    float size_down = -0.1f;
 
     //UI
     private int count;
     public TextMeshProUGUI countText;
     public TextMeshProUGUI winText;
+
+    //sounds 
+   // public AudioClip fruitSound;
+   //public AudioClip spikeSound;
 
     #endregion
 
@@ -43,27 +47,30 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Pick Up"))
         {
+            //Sound Effect
+           // this.GetComponent<AudioSource>().PlayOneShot(fruitSound);
+
             //Increases size of ball
-            transform.localScale += new Vector3(size_up, size_up, size_up);
+            transform.localScale = transform.localScale * (1f + size_up);
             size += size_up;
             other.enabled = false;
+            //Debug.Log(transform.localScale.ToString());
 
             //pick up object becomes child of ball
             other.transform.SetParent(this.transform);
             count += 1;
             SetCountText();
         }
-        else if (other.gameObject.CompareTag("Spike"))
+        else if (other.gameObject.CompareTag("Spike") && size != 0)
         {
-            //Decreases size of ball
-            transform.localScale += new Vector3(size_down, size_down, size_down);
+            //Sound Effect
+           // this.GetComponent<AudioSource>().PlayOneShot(spikeSound);
+
+            other.gameObject.SetActive(false);
+            //Decreases size of ball 
+            transform.localScale = transform.localScale * (1f+size_down);
             size -= size_down;
-            //Testing for Reaction by seeing if score decreases
-            if (count != 0)
-            {
-                count -= 1;
-                SetCountText();
-            }
+            Debug.Log("going down a size");
         }         
     }
 
