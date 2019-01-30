@@ -232,7 +232,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8278ffde5a949b439af98318fe0b265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 2019363907769162432, guid: 7c0849839e7b3984c94e040b16878042,
+  prefabToSpawn_1: {fileID: 2699888653141472370, guid: 71d970c78d7b5496087ce50e6be041d6,
+    type: 3}
+  prefabToSpawn_2: {fileID: 2078108721758983168, guid: a03cbfcd74986456fb7d72b8f70be076,
+    type: 3}
+  prefabToSpawn_3: {fileID: 7763470079960504454, guid: 6253a74950e4e473eaae996a9938a1b2,
     type: 3}
 --- !u!4 &449636840
 Transform:
@@ -1535,7 +1539,7 @@ Transform:
   - {fileID: 946155318}
   - {fileID: 1931809831}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &206275040126555198
 PrefabInstance:
@@ -1592,7 +1596,7 @@ PrefabInstance:
     - target: {fileID: 203475566540103334, guid: 6423298debab1407f8a836a1cdfe6745,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 203475566540103334, guid: 6423298debab1407f8a836a1cdfe6745,
         type: 3}
