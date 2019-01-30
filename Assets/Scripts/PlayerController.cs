@@ -24,8 +24,8 @@ public class PlayerController : MonoBehaviour
 
 
     //Sounds
-    //public AudioClip fruitSound;
-    //public AudioClip spikeSound;
+    public AudioClip fruitSound;
+    public AudioClip spikeSound;
 
     #endregion
 
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Pick Up"))
         {
             //Sound Effect
-            //this.GetComponent<AudioSource>().PlayOneShot(fruitSound);
+            this.GetComponent<AudioSource>().PlayOneShot(fruitSound);
 
             //Increases size of ball
             //transform.localScale += new Vector3(size_up, size_up, size_up)*2f;
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.CompareTag("Spike") && size!= 0)
         {
             //Sound Effect
-            //this.GetComponent<AudioSource>().PlayOneShot(spikeSound);
+            this.GetComponent<AudioSource>().PlayOneShot(spikeSound);
 
             other.gameObject.SetActive(false);
             //Decreases size of ball
