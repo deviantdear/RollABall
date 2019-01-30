@@ -449,6 +449,7 @@ MonoBehaviour:
   prefabToSpawn_1: {fileID: 0}
   prefabToSpawn_2: {fileID: 0}
   prefabToSpawn_3: {fileID: 0}
+  prefabToSpawn_4: {fileID: 0}
 --- !u!114 &244977933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1360,6 +1361,8 @@ MonoBehaviour:
   prefabToSpawn_2: {fileID: 7763470079960504454, guid: 6253a74950e4e473eaae996a9938a1b2,
     type: 3}
   prefabToSpawn_3: {fileID: 2699888653141472370, guid: 71d970c78d7b5496087ce50e6be041d6,
+    type: 3}
+  prefabToSpawn_4: {fileID: 3101287838743332831, guid: 1efef09dbe72d574bb07c0a0ad6ae54f,
     type: 3}
 --- !u!4 &932681203
 Transform:
@@ -3683,6 +3686,7 @@ MonoBehaviour:
   prefabToSpawn_1: {fileID: 0}
   prefabToSpawn_2: {fileID: 0}
   prefabToSpawn_3: {fileID: 0}
+  prefabToSpawn_4: {fileID: 0}
 --- !u!114 &1781287455
 MonoBehaviour:
   m_ObjectHideFlags: 0
