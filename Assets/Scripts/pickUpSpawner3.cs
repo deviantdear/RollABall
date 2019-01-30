@@ -25,23 +25,24 @@ public class pickUpSpawner3 : MonoBehaviour
                     //Object instanceObj = Instantiate(prefabToSpawn, new Vector3(xpos, 8.85f, zpos), Quaternion.identity);
 
                     pick = Random.Range(0f, 4f);
-
+                    Transform instanceObj;
                     if (pick < 1)
                     {
-                        Object instanceObj = Instantiate(prefabToSpawn_1, new Vector3(xpos, 8.85f, zpos), Quaternion.identity);
+                        instanceObj = Instantiate(prefabToSpawn_1, new Vector3(xpos, 8.85f, zpos), Quaternion.identity);
                     }
                     else if ((pick >= 1) && (pick < 2))
                     {
-                        Object instanceObj = Instantiate(prefabToSpawn_2, new Vector3(xpos, 8.85f, zpos), Quaternion.identity);
+                        instanceObj = Instantiate(prefabToSpawn_2, new Vector3(xpos, 8.85f, zpos), Quaternion.identity);
                     }
                     else if ((pick >= 2) && (pick < 3))
                     {
-                        Object instanceObj = Instantiate(prefabToSpawn_3, new Vector3(xpos, 8.85f, zpos), Quaternion.identity);
+                        instanceObj = Instantiate(prefabToSpawn_3, new Vector3(xpos, 8.85f, zpos), Quaternion.identity);
                     }
                     else
                     {
-                        Object instanceObj = Instantiate(prefabToSpawn_4, new Vector3(xpos, 8.85f, zpos), Quaternion.identity);
+                        instanceObj = Instantiate(prefabToSpawn_4, new Vector3(xpos, 8.85f, zpos), Quaternion.identity);
                     }
+                    instanceObj.localScale = instanceObj.localScale * 6;
                 }
             }
         }
