@@ -8,6 +8,7 @@ TagManager:
   - Spike
   - Redirector
   - Sand
+  - WinTrigger
   layers:
   - Default
   - TransparentFX

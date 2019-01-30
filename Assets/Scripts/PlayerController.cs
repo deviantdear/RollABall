@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     private int count;
     public TextMeshProUGUI countText;
     public TextMeshProUGUI winText;
+    private float bonus;
+    public GameObject exitMenu;
+
 
     //Sounds
     //public AudioClip fruitSound;
@@ -77,19 +80,22 @@ public class PlayerController : MonoBehaviour
             //Testing for Reaction by seeing if score decreases
             Debug.Log("going down a size");
 
-        }         
+        }  
+        else if (other.gameObject.CompareTag("WinTrigger"))
+        {
+            WinGame();
+        }
     }
 
     void SetCountText()
     {
         //using TMPro because it's much nicer looking
-        countText.SetText("Score: " + count.ToString());
-
-        //Win Condition Text
-        if (count >= 16)
-        {
-            winText.SetText("You Won!");
-        }
+        countText.SetText("Fruit Collected: " + count.ToString());
     }
 
+    void WinGame()
+    {
+        winText.SetText(" Congratulations! You've Escaped the Basket!");
+        exitMenu.SetActive(true);
+    }
 }

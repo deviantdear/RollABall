@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/RollABall.unity
     guid: 7f2df1aa7d7b63849a65ebb19226907e
+  - enabled: 1
+    path: Assets/Scenes/BetaBuild.unity
+    guid: 887297db2651ee247b59b3c11f7bc020
   m_configObjects: {}
