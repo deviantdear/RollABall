@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI winText;
     private float bonus;
     public GameObject exitMenu;
+    public GameObject uiMenu;
 
     //Jump
     private float cooldownTime = 2;
@@ -109,6 +110,7 @@ public class PlayerController : MonoBehaviour
     void WinGame()
     {
         winText.SetText(" Congratulations! You've Escaped the Basket!");
+        uiMenu.SetActive(false);
         exitMenu.SetActive(true);
     }
 }
